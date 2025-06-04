@@ -192,11 +192,13 @@ section {
 }
 
 .skill-card {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.05); /* semi-transparent card */
   padding: 20px;
   width: 300px;
   border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: var(--light);
+  transition: var(--transition);
 }
 
 .skill-card h3 {
@@ -205,39 +207,30 @@ section {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.skill {
-  margin-bottom: 15px;
+  color: var(--light);
 }
 
 .skill span {
   display: block;
   font-weight: 500;
   margin-bottom: 6px;
+  color: var(--light);
 }
 
 .progress-bar {
-  background-color: #eee;
+  background-color: rgba(255, 255, 255, 0.1);
   height: 10px;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .progress-fill {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
   height: 100%;
   width: 0;
   border-radius: 10px;
   animation: fillBar 2s ease forwards;
 }
-
-@keyframes fillBar {
-  from {
-    width: 0;
-  }
-}
-
 /* UHV Section */
 .uhv-content {
   max-height: 0;
