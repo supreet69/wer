@@ -1,0 +1,353 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+  overflow-y: scroll;
+}
+a {
+  text-decoration: none;
+  color: #0077ff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+a:hover {
+  color: #00d4ff;
+  transform: scale(1.05);
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 5s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+}
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #00d4ff;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.nav-links li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Hero Section */
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+.hero:hover {
+  background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+}
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 15px #00f0ff;
+  transition: transform 0.5s ease;
+}
+.hero h1:hover {
+  transform: translateY(-10px) translateX(-10px); 
+}
+.hero p {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  transition: transform 0.5s ease;
+}
+.hero p:hover {
+  transform: translateY(-5px);
+}
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  margin-top: 1rem;
+  border: none;
+  background-color: #00d4ff;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: #0077ff;
+  transform: scale(1.1);
+}
+
+/* About Section */
+.about {
+  padding: 4rem 2rem;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  transition: background 0.5s ease;
+}
+
+.about-content img {
+  width: 300px;
+  height: auto;
+  border-radius: 1rem;
+  transition: background 0.5s ease;
+}
+
+.about-text {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+  transition: background 0.5s ease;
+}
+
+/* Projects Section */
+.projects {
+  background: #f5f5f5;
+  padding: 4rem 2rem;
+  text-align: center; 
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.project-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+.project-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.project-card img:hover {
+  transform: scale(1.1);
+}
+
+/* UHV Section */
+.section-block {
+  padding: 4rem 2rem;
+  background: #fff;
+}
+#uhv-paragraph {
+  display: none;
+  margin-top: 2rem;
+}
+#uhv-paragraph.show {
+  display: block;
+}
+
+/* Contact */
+.contact {
+  padding: 4rem 2rem;
+  background: #f5f5f5;
+  text-align: center; /* Centering the text */
+}
+form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+input, textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+input:focus, textarea:focus {
+  border-color: #00d4ff;
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+.social-links a {
+  color: #00d4ff;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+.fade-up {
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 1rem 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .about-content {
+    flex-direction: column; /* Stack image and text on smaller screens */
+    align-items: center; /* Center align items */
+  }
+
+  .about-content img {
+    width: 80%; /* Responsive image size */
+  }
+
+  .contact h2 {
+    text-align: center; /* Ensure heading is centered */
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .about img {
+    width: 250px;
+  }
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.image-anime {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
