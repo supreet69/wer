@@ -183,53 +183,50 @@ section {
 }
 
 /* Skills Section */
+/* ===== SKILLS SECTION ===== */
 .skills-container {
   display: flex;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  padding: 20px 0;
 }
 
-.skill-card {
-  background-color: rgba(255, 255, 255, 0.05); /* semi-transparent card */
+.skill-category {
+  background: #fff;
   padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   width: 300px;
-  border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  color: var(--light);
-  transition: var(--transition);
 }
 
-.skill-card h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--light);
+.skill {
+  margin: 15px 0;
 }
 
 .skill span {
-  display: block;
   font-weight: 500;
-  margin-bottom: 6px;
-  color: var(--light);
+  display: block;
+  margin-bottom: 5px;
 }
 
-.progress-bar {
-  background-color: rgba(255, 255, 255, 0.1);
+.bar {
+  width: 100%;
+  background: #eee;
   height: 10px;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.progress-fill {
-  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+.fill {
   height: 100%;
   width: 0;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  transition: width 1.5s ease-in-out;
   border-radius: 10px;
-  animation: fillBar 2s ease forwards;
+}
+
+@keyframes fillBar {
+  to { width: attr(data-level); }
 }
 /* UHV Section */
 .uhv-content {
